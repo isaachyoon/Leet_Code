@@ -5,6 +5,7 @@ var numIslands = function(grid) {
       if(grid[row][col] === '1') {
         islandNum += 1;
         countIsland(grid, row, col)
+        console.log('islandNum')
       }
     }
   }
@@ -12,11 +13,11 @@ var numIslands = function(grid) {
 };
 
 function countIsland(grid, row, col) {
+  // console.log(row, col)
   if(row < 0 || col < 0 || row > grid.length - 1 || col > grid[0].length - 1 || grid[row][col] === '0') {
     return;
   }
-  console.log(grid)
-  grid[row][col] = 0;
+  grid[row][col] = '0';
   countIsland(grid, row+1, col);
   countIsland(grid, row, col+1);
   countIsland(grid, row-1, col);
