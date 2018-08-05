@@ -52,7 +52,7 @@ d.left = e;
 d.right = f;
 f.left = h;
 
-console.log(lowestCommonAncestor(a, d, h));
+console.log(lowestCommonAncestor(a, a, b));
 
 /*
 var lowestCommonAncestor = function(root, p, q) {
