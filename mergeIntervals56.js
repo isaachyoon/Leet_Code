@@ -2,13 +2,10 @@ var merge = function(intervals) {
 	intervals = intervals.sort((x,y) => x.start-y.start);
 	let res = [intervals[0]];
 	for (let i = 1; i < intervals.length; i++) {
-		// let compareNum = Math.max(res[res.length - 1].end, intervals[i].start);
-		// console.log(compareNum,  intervals[i].start)
 		if (res[res.length-1].end > intervals[i].end) {
 			continue;
 		} else if (res[res.length-1].end >= intervals[i].start) { // combine
 			res[res.length-1].end = intervals[i].end;
-			// console.log(compareNum, res)
 		} else {
 			res.push(intervals[i]);
 		}
